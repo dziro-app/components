@@ -61,6 +61,8 @@
   .content {
     background: $white;
     padding: 1em;
+    max-height: 60vh;
+    overflow-y: scroll;
   }
 </style>
 

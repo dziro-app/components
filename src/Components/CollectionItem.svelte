@@ -43,14 +43,14 @@
 
   .Item {
     @include item-card;
-    box-sizing: border-box;
+    background: $white;
     box-shadow: 0 1px 1px 1px $smoke;
 
     img {
       display: block;
       height: 175px;
       margin: 0 auto;
-      object-fit: cover;
+      object-fit: scale-down;
       width: 96%;
     }
 
@@ -59,16 +59,16 @@
 
       .name {
         @include subtitle;
-        font-size: 14px;
+        font-size: 18px;
       }
 
       .website {
-        @include mini-text;
+        @include small-text;
         align-items: center;
         display: flex;
         color: inherit;
-        grid-gap: 1em;        
-        font-size: 10px;
+        grid-gap: 0.5em;
+        margin-top: 0.6em;
         &:hover, &:visited {
           color: inherit;
         }

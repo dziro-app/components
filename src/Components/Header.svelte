@@ -1,7 +1,7 @@
 <!--D Header -->
 <script lang="ts">
-  export let  username: string // Nombre del usuario
-  export let picture: string // Url del perfil del usuario
+  export let username: string = "" // Nombre del usuario
+  export let picture: string = "" // Url del perfil del usuario
   export let options = [] // Opciones que se pasarán al componente de menú
 
 

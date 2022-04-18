@@ -6,9 +6,11 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
-import svelteBlueprint from 'rollup-plugin-svelte-blueprint';
+import svelteBlueprint from 'rollup-plugin-svelte-blueprint'
+
 
 const production = !process.env.ROLLUP_WATCH;
+const pkg = require('./package.json')
 
 function serve() {
 	let server;
@@ -31,8 +33,9 @@ function serve() {
 	};
 }
 
+
 export default {
-	input: 'src/main.ts',
+	input: production? 'src/Components/Button.svelte' :'src/main.ts',
 	output: {
 		sourcemap: true,
 		format: 'iife',
@@ -62,7 +65,7 @@ export default {
 		// consult the documentation for details:
 		// https://github.com/rollup/plugins/tree/master/packages/commonjs
 		resolve({
-			browser: true,
+			browser: !production,
 			dedupe: ['svelte']
 		}),
 		commonjs(),

@@ -21,7 +21,7 @@
   // Misc
   import ModalBase from "./Docs/Pages/ModalBase.svelte"
   
-  let CurrentComponent = InputEmoji
+  let CurrentComponent = CollectionItem
   
   const componentMap = [{
     name: "Logo",
@@ -93,7 +93,7 @@
     .left {
       background: $black;
       color: $smoke;
-      height: 100vh;
+      min-height: 100vh;
       padding: 1em;
       p {
         cursor: pointer;

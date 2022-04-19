@@ -3,7 +3,6 @@
 @mixin item-card {
   border-radius: 10px;
   box-sizing: border-box;
-  padding: sizing(1);
-  height: 310px;
+  padding: sizing(1) sizing(1) sizing(2) sizing(1);
   width: 225px;
 }

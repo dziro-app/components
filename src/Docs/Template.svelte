@@ -98,7 +98,7 @@
     }
 
     .usage .prism {
-      overflow-x: scroll;
+      overflow-x: hidden;
       max-width: 1200px;
     }
 

@@ -31,6 +31,9 @@
 <style lang="scss">
   @import "../Styles/_colors.scss";
   @import "../Styles/_texts.scss";
+  @import "../Styles/_scroll.scss";
+
+  @include scrollBar;
 
   .Modal {
     align-items: center;

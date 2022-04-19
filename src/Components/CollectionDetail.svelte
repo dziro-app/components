@@ -1,6 +1,8 @@
 <!--D Componente para preview de una colección -->
 
 <script lang="ts">
+  import { fly } from 'svelte/transition'
+
   import Color from "color"
   import Icon from "./Icon.svelte"
 
@@ -39,7 +41,7 @@
       on:click={() => { showOptions = !showOptions }}
       color={Color(color).darken(0.35).desaturate(0.5).saturate(0.1)} />
       {#if showOptions}
-        <div class="options">
+        <div class="options" transition:fly="{{ y: -10 }}">
           { #each options as option }
             <div class="option" on:click={() => onDefaultOptionClick(option)} > {option.display} </div>
           {/each}

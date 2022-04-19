@@ -43,6 +43,7 @@
 
   a{
       color: $asphalt;
+      text-decoration: none;
       &:hover, &:visited {
         color: $black;
         color: inherit;
@@ -57,13 +58,22 @@
     display: grid;
     grid-template-rows: 175px 70px 1fr;
     grid-row-gap: sizing(2);
+    overflow: hidden;
     transition: all 0.3s;
+
     img {
       display: block;
       height: 100%;
+      transition: all 0.3s;
       margin: 0 auto;
+      margin-left: -16px;
       object-fit: cover;
-      width: 96%;
+      width: 116%;
+    }
+
+    &:hover img {
+      object-fit: scale-down;
+      margin-top: sizing(2);
     }
     .info {
       align-items: stretch;

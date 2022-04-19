@@ -21,7 +21,7 @@
   // Misc
   import ModalBase from "./Docs/Pages/ModalBase.svelte"
   
-  let CurrentComponent = Logo
+  let CurrentComponent = InputEmoji
   
   const componentMap = [{
     name: "Logo",

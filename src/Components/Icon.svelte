@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let name: "dots" | "CaretDoubleDown" | "globe" | "plus" = "dots"
+  export let name: "dots" | "CaretDown" | "CaretDoubleDown" | "globe" | "plus" = "dots"
   export let size = 32
   export let color = "#c0c0c0"
 </script>
@@ -16,7 +16,9 @@
   <path d="M16 27.6748C18.7614 27.6748 21 22.4478 21 15.9998C21 9.5519 18.7614 4.32483 16 4.32483C13.2386 4.32483 11 9.5519 11 15.9998C11 22.4478 13.2386 27.6748 16 27.6748Z" stroke={color} stroke-linecap="round" stroke-linejoin="round"/>
 {:else if name ==="CaretDoubleDown"}
   <path d="M26 16L16 26L6 16" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M26 6L16 16L6 6" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> 
+  <path d="M26 6L16 16L6 6" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+{:else if name ==="CaretDown"}
+  <path d="M26 12L16 22L6 12" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 {:else if name ==="plus"}
   <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke={color} stroke-width="2" stroke-miterlimit="10"/>
   <path d="M11 16H21" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

@@ -84,9 +84,8 @@
       background: $smoke;
       display: flex;
       flex-wrap: wrap;
-      padding: 1em;
+      padding: sizing(1);
       font-size: 30px;
-      grid-gap: sizing(1);
       max-height: 200px;
       left: 0;
       overflow-y: scroll;

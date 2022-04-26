@@ -57,6 +57,7 @@
       @include title;
       padding: 16px 100px;
       margin: 0;
+      text-align: center;
     }
 
   }

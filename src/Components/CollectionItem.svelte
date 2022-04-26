@@ -11,7 +11,8 @@
   export let image: string // Imagen del artículo
   export let name: string // Nombre del artículo
   export let website: string // Url del artículo
-  export let price: number // Precio del artículo 
+  export let price: number // Precio del artículo
+  export let obtained: boolean = false// Muestra indicador de compra hecha
   export let options: Array<Option> = [] // Array de opciones para el menú
 
   let showOptions = false
@@ -50,6 +51,10 @@
         {/if}
       </div>
     </div>
+
+    {#if obtained}
+      <div class="tag">Comprado</div>
+    {/if}
 
     <img src={image} alt="preview" />
     <div class="info">
@@ -121,6 +126,16 @@
       }
     }
 
+    .tag {
+      @include mini-text;
+      background: $orange;
+      position: absolute;
+      right: sizing(1);
+      // bottom: sizing(1);
+      border-radius: 12px;
+      padding: 4px 6px;
+    }
+
     img {
       display: block;
       height: 100%;
@@ -178,6 +193,7 @@
     price={29.20} />
   <CollectionItem 
     name='Kimono'
+    obtained
     options={[{'display': 'Eliminar', onClick: ()=>{ alert('Eliminar') }}]}
     website='https://www.amazon.com.mx/chamarra-cl%C3%A1sico-algod%C3%B3n-japonesa-531-azul/dp/B08CR4PR1Y/ref=sr_1_14?__mk_es_MX=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2587NQ2OIQSEM&keywords=kimono+hombre&qid=1650321884&sprefix=kimono+hombre%2Caps%2C100&sr=8-14'
     image='https://images-na.ssl-images-amazon.com/images/I/41bsNInFzRL.__AC_SY445_SX342_QL70_ML2_.jpg' 

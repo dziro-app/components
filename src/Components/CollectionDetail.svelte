@@ -2,9 +2,8 @@
 
 <script lang="ts">
   import { fly } from 'svelte/transition'
-
-  import Color from "color"
   import Icon from "./Icon.svelte"
+  import {getUiColors} from "../Utils/colors"
 
   type Option = {
     display: string,
@@ -17,29 +16,35 @@
   export let options: Array<Option> = [] // Array de opciones para el menú
 
   let showOptions = false
+  let colors = getUiColors(color)
 
   const onDefaultOptionClick = (option: Option) => {
     showOptions=false
     option.onClick()
   }
 
+  $: {
+    console.log(color)
+    colors = getUiColors(color)
+  }
+
 
 </script>
 
-<div style={`background: ${Color(color).lightness(60).desaturate(0.3).lighten(0.5)}`}>
+<div style={`background: ${colors.background}`}>
   <div 
     class="header"
-    style={`background: ${color}`}>
+    style={`background: ${colors.main}`}>
     <div class="iconWrapper">
       {emoji}
     </div>
-    <h3 style={`color: ${Color(color).darken(0.35).desaturate(0.5).saturate(0.1)}`} > 
+    <h3 style={`color: ${colors.text}`} > 
       {name}
     </h3>
     <div class="menu">
       <Icon 
       on:click={() => { showOptions = !showOptions }}
-      color={Color(color).darken(0.35).desaturate(0.5).saturate(0.1)} />
+      color={colors.text} />
       {#if showOptions}
         <div class="options" transition:fly="{{ y: -10 }}">
           { #each options as option }

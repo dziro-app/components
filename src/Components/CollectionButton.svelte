@@ -1,6 +1,7 @@
 <!--D Componente para seleccionar una colección -->
 <script lang="ts" >
   import Color from "color"
+  import {getUiColors} from "../Utils/colors"
 
   export let name: string // Nombre de la colección
   export let color: string // Color de la colección
@@ -16,7 +17,7 @@
     {emoji}
   </div>
   <div 
-    style={`color: ${Color(color).darken(0.35).desaturate(0.5)}`}
+    style={`color: ${getUiColors(color).text}`}
     class="name">
     {name}
   </div> 
@@ -57,4 +58,5 @@
 
 <!--E
 <CollectionButton name='Bandeja' color='#EDE63E' emoji='🛒' />
+<CollectionButton name='Bandeja' color='#4f0b0b' emoji='🛒' />
 -->

@@ -24,7 +24,6 @@
   }
 
   $: {
-    console.log(color)
     colors = getUiColors(color)
   }
 

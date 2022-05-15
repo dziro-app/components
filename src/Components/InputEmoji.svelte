@@ -91,6 +91,7 @@
       overflow-y: scroll;
       position: absolute;
       top: 100%;
+      z-index: 2;
       
       .option {
         cursor: pointer;

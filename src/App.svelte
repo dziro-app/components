@@ -21,7 +21,7 @@
   // Misc
   import ModalBase from "./Docs/Pages/ModalBase.svelte"
   
-  let CurrentComponent = CollectionButton
+  let CurrentComponent = InputColor
   
   const componentMap = [{
     name: "Logo",

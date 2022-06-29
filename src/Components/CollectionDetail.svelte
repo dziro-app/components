@@ -38,10 +38,12 @@
       {name}
     </h3>
     <div class="menu">
-      <Icon 
-      on:click={() => { showOptions = !showOptions }}
-      color={colors.text} />
-      {#if showOptions}
+      <div class="trigger">
+        <Icon 
+          on:click={() => { showOptions = !showOptions }}
+          color={colors.text} />
+      </div>
+        {#if showOptions}
         <div class="options">
           <Menu options={options} onClick={onDefaultOptionClick} />
         </div>
@@ -87,10 +89,20 @@
       position: relative;
     }
 
+    .trigger {
+      opacity: 0.6;
+    }
+
     .options {
       position: absolute;
       right: 0;
       top: 100%;
+    }
+
+    &:hover {
+      .trigger {
+        opacity: 1;
+      }
     }
     
   }

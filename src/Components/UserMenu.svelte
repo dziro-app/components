@@ -80,7 +80,7 @@
       box-sizing: border-box;
       left: 0;  
       position: absolute;
-      top: 100%;
+      top: calc(100% + sizing(2));
       width: 100%;
       z-index: 3;
     }

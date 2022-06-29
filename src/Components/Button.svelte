@@ -12,11 +12,13 @@
   class:outline={form==="outline"}
   class:normal={form==="normal"}
   class:loading={loading}
-  style={`background: ${color}`}
+  style={`background: ${color};`}
   type={type}
   on:click>
   {#if loading}
-    <Loader size={18} color="#fff" />
+    <div class="Loader">
+      <Loader size={17} color="inherit" />
+    </div>
   {:else}
     <slot></slot>
   {/if}
@@ -46,22 +48,32 @@
       }
       &.loading{
         background-color: colors.$base-color-gray-60;
-        padding: sizing(2) sizing(2);
+        padding: sizing(1.9) sizing(2);
       }
     }
 
     &.outline {
       border: 2px dashed colors.$base-color-gray-60;
       border-radius: 6px;
+      background: transparent !important;
       color: colors.$base-color-gray-60;
       font-size: 18px;
       opacity: 0.8;
       transition: all linear 0.3s;
       padding: 16px;
+      min-width: 220px;
       &:hover {
         background: colors.$base-color-white-50;
         opacity: 1;
       }
+      &.loading {
+        padding: sizing(1.9) sizing(2);
+      }
+    }
+
+
+    :global(.Loader) {
+      margin: 0 auto;
     }
   }
 </style>
@@ -69,6 +81,7 @@
 <!--E
 <Button form='outline' loading > Outline </Button>
 <Button form='outline' > Outline </Button>
+<br/>
 <Button> Normal </Button>
 <Button loading > Normal </Button>
 -->

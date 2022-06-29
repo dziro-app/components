@@ -45,6 +45,6 @@
 <Header 
   username='evesan' 
   picture='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftresubresdobles.com%2Fwp-content%2Fuploads%2F2021%2F04%2Fskft-23aff38e10ee3c4e430a1f3450c4a01d.jpeg&f=1&nofb=1'
-  options={[{'display': 'Acerca de', onClick: ()=>{ alert('acerca de') }}]}
+  options={[{'text': 'Acerca de', onClick: ()=>{ alert('acerca de') }}]}
 />
 -->

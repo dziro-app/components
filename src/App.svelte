@@ -24,7 +24,7 @@
   // Misc
   import ModalBase from "./Docs/Pages/ModalBase.svelte"
   
-  let CurrentComponent = Loader
+  let CurrentComponent = Button
   
   const componentMap = [{
     name: "Logo",

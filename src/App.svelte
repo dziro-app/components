@@ -4,10 +4,11 @@
   // Common components
   import Logo from "./Docs/Pages/Logo.svelte"
   import Icon from "./Docs/Pages/Icon.svelte"
+  import Loader from "./Docs/Pages/Loader.svelte"
   import Button from "./Docs/Pages/Button.svelte"
   import Menu from "./Docs/Pages/Menu.svelte"
   import UserMenu from "./Docs/Pages/UserMenu.svelte"
-  import Header from "./Docs/Pages/Header.svelte" 
+  import Header from "./Docs/Pages/Header.svelte"
 
   // Collection
   import CollectionButton from "./Docs/Pages/CollectionButton.svelte"
@@ -23,7 +24,7 @@
   // Misc
   import ModalBase from "./Docs/Pages/ModalBase.svelte"
   
-  let CurrentComponent = UserMenu
+  let CurrentComponent = Loader
   
   const componentMap = [{
     name: "Logo",
@@ -31,6 +32,9 @@
   }, {
     name: "Icon",
     component: Icon
+  }, {
+    name: "Loader",
+    component: Loader
   }, {
     name: "Button",
     component: Button

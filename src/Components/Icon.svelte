@@ -1,27 +1,28 @@
+<!--D Componente de icono -->
 <script lang="ts">
-  export let name: "dots" | "CaretDown" | "CaretDoubleDown" | "globe" | "plus" = "dots"
+  export let name: 
+  "add" | "ShoppingBag" | "chevron-down-o" | "chevron-right-r" | 
+  "controller" | "layout-grid-small" | "more-vertical-alt"|
+  "more-vertical-r" | "rename" | "ShoppingBag" | "trash-empty" = "more-vertical-r"
   export let size = 32
-  export let color = "#c0c0c0"
+  export let color = "#000000"
 </script>
 
-<svg on:click width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-{#if name === "dots"}
-  <path d="M16 17.5C16.8284 17.5 17.5 16.8284 17.5 16C17.5 15.1716 16.8284 14.5 16 14.5C15.1716 14.5 14.5 15.1716 14.5 16C14.5 16.8284 15.1716 17.5 16 17.5Z" fill={color}/>
-  <path d="M16 9.5C16.8284 9.5 17.5 8.82843 17.5 8C17.5 7.17157 16.8284 6.5 16 6.5C15.1716 6.5 14.5 7.17157 14.5 8C14.5 8.82843 15.1716 9.5 16 9.5Z" fill={color}/>
-  <path d="M16 25.5C16.8284 25.5 17.5 24.8284 17.5 24C17.5 23.1716 16.8284 22.5 16 22.5C15.1716 22.5 14.5 23.1716 14.5 24C14.5 24.8284 15.1716 25.5 16 25.5Z" fill={color}/>
-{:else if name === "globe"}
-  <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke={color} stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M4.6875 12H27.3125" stroke={color} stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M4.6875 20H27.3125" stroke={color} stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M16 27.6748C18.7614 27.6748 21 22.4478 21 15.9998C21 9.5519 18.7614 4.32483 16 4.32483C13.2386 4.32483 11 9.5519 11 15.9998C11 22.4478 13.2386 27.6748 16 27.6748Z" stroke={color} stroke-linecap="round" stroke-linejoin="round"/>
-{:else if name ==="CaretDoubleDown"}
-  <path d="M26 16L16 26L6 16" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M26 6L16 16L6 6" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-{:else if name ==="CaretDown"}
-  <path d="M26 12L16 22L6 12" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-{:else if name ==="plus"}
-  <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke={color} stroke-width="2" stroke-miterlimit="10"/>
-  <path d="M11 16H21" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M16 11V21" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-{/if}
-</svg>
+<span 
+  on:click
+  style={`color: ${color}; font-size: ${size}px`}
+  class={`icon-${name}`}>
+</span>
+
+<!--E
+  <Icon name='add' />
+  <Icon name='chevron-down-o' />
+  <Icon name='chevron-right-r' />
+  <Icon name='controller' />
+  <Icon name='layout-grid-small' />
+  <Icon name='more-vertical-alt' />
+  <Icon name='more-vertical-r' />
+  <Icon name='rename' />
+  <Icon name='ShoppingBag' />
+  <Icon name='trash-empty' />
+-->

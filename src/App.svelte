@@ -3,15 +3,16 @@
 
   // Common components
   import Logo from "./Docs/Pages/Logo.svelte"
+  import Icon from "./Docs/Pages/Icon.svelte"
   import Button from "./Docs/Pages/Button.svelte"
-  import Header from "./Docs/Pages/Header.svelte" 
   import UserMenu from "./Docs/Pages/UserMenu.svelte"
+  import Header from "./Docs/Pages/Header.svelte" 
 
   // Collection
   import CollectionButton from "./Docs/Pages/CollectionButton.svelte"
   import CollectionDetail from "./Docs/Pages/CollectionDetail.svelte"
-  import CollectionItem from "./Docs/Pages/CollectionItem.svelte"
   import CollectionAddItem from "./Docs/Pages/CollectionAddItem.svelte"
+  import CollectionItem from "./Docs/Pages/CollectionItem.svelte"
 
   // Inputs
   import InputText from "./Docs/Pages/InputText.svelte"
@@ -21,32 +22,35 @@
   // Misc
   import ModalBase from "./Docs/Pages/ModalBase.svelte"
   
-  let CurrentComponent = InputColor
+  let CurrentComponent = InputEmoji
   
   const componentMap = [{
     name: "Logo",
     component: Logo
   }, {
+    name: "Icon",
+    component: Icon
+  }, {
     name: "Button",
     component: Button
   }, {
-    name: "Header",
-    component: Header
-  }, {
     name: "UserMenu",
     component: UserMenu
+  }, {
+    name: "Header",
+    component: Header
   }, {
     name: "CollectionButton",
     component: CollectionButton
   }, {
     name: "CollectionDetail",
     component: CollectionDetail
+  },  {
+    name: "CollectionItem",
+    component: CollectionItem
   }, {
     name: "CollectionAddItem",
     component: CollectionAddItem
-  }, {
-    name: "CollectionItem",
-    component: CollectionItem
   }, {
     name: "InputText",
     component: InputText

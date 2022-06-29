@@ -30,9 +30,10 @@
         class="trigger" 
         class:open={showOptions}
         on:click={() => {showOptions = !showOptions}} >
-        <Icon size={22} color="#000" name="CaretDown" />
+        <Icon size={22} color="inherit" name="chevron-down-o" />
       </div>
     </div>
+
     {#if showOptions}
       <div class="options">
         {#each emojis as emoji}
@@ -48,6 +49,7 @@
 </div>
 
 <style lang="scss">
+  @use "../Styles/colors.scss";
   @import "../Styles/_inputs.scss";
   @import "../Styles/_sizing.scss";
 
@@ -57,10 +59,16 @@
       @include input;
       display: flex;
       align-items: center;
+      color: colors.$base-color-gray-60;
       justify-content: space-between;
+
+      &:hover {
+        color: colors.$base-color-black-80;
+      }
+
       .trigger {
         align-items: center;
-        background: $white;
+        // background: $white;
         transition: all 0.3s;
         border-radius: 50%;
         cursor: pointer;
@@ -76,12 +84,12 @@
     }
 
     .placeholder {
-      color: $gray;
+      color: colors.$base-color-gray-60;
     }
     
 
     .options {
-      background: $smoke;
+      background: colors.$base-color-white-50;
       display: flex;
       flex-wrap: wrap;
       padding: sizing(1);
@@ -98,7 +106,7 @@
         padding: sizing(1);
         border-radius: 5px;
         &:hover {
-          outline: 1px solid $gray;
+          outline: 1px solid colors.$base-color-gray-60;
         }
       }
     }

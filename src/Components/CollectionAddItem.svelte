@@ -8,13 +8,13 @@
   <div>
     {text}
   </div>
-  <Icon name="plus" />
+  <Icon name="add" color="inherit" />
 </div>
 
 <style lang="scss">
+  @use "../Styles/colors.scss";
   @import "../Styles/_item.scss";
   @import "../Styles/_sizing.scss";
-  @import "../Styles/_colors.scss";
   @import "../Styles/_texts.scss";
 
   .AddItem {
@@ -22,8 +22,8 @@
     @include  normal-text;
     align-content: center;
     align-items: center;
-    border: 2px dashed $gray;
-    color: $gray;
+    border: 2px dashed colors.$base-color-gray-60;
+    color: colors.$base-color-gray-60;
     cursor: pointer;
     display: grid;
     grid-gap: sizing(3);

@@ -14,19 +14,20 @@
 
 
 <style lang="scss">
-  @import "../Styles/_colors.scss";
+  @use "../Styles/colors.scss";
   @import "../Styles/_texts.scss";
 
   button {
     @include  normal-text;
-    border: none;
     background: none;
+    border-radius: 5px;
+    border: none;
     cursor: pointer;
 
     &.normal {
-      background: $asphalt;
+      background: colors.$base-color-black-80;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.06);
-      color: $white;
+      color: colors.$base-color-white-100;;
       padding: 16px 64px;
       transition: all 0.3s;
       &:hover {
@@ -35,15 +36,15 @@
     }
 
     &.outline {
-      border: 2px dashed $gray;
+      border: 2px dashed colors.$base-color-black-80;
       border-radius: 6px;
-      color: $gray;
+      color: colors.$base-color-gray-60;
       font-size: 18px;
       opacity: 0.8;
       transition: all linear 0.3s;
       padding: 16px;
       &:hover {
-        background: $smoke;
+        background: colors.$base-color-white-50;
         opacity: 1;
       }
     }

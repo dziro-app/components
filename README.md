@@ -22,3 +22,18 @@ Debe instalar en su proyecto las siguientes tipografías para que los estilos se
   ...
 </head>
 ```
+
+## Iconos
+Debe copiar la fuente de íconos y llevarla a su proyecto para que se vean correctamente y agregar el css a su index.html
+``` bash
+$ cp -r ./public/icons/ <your_path>
+```
+
+```html
+<head>
+  ...
+  <link rel="stylesheet" href="/icons/style.css">
+  ...
+</head>
+```
+

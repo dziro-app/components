@@ -1,6 +1,6 @@
 <!--D Componente para seleccionar una colección -->
 <script lang="ts" >
-  import Color from "color"
+  import Icon from "./Icon.svelte"
   import {getUiColors} from "../Utils/colors"
 
   export let name: string // Nombre de la colección
@@ -11,16 +11,19 @@
 
 <div
   on:click
-  style={`background: ${color}`}
-  class="CollectionButton">
+  class="CollectionButton"
+  style={`background: ${color}`}>
   <div class="iconWrapper">
     {emoji}
   </div>
   <div 
-    style={`color: ${getUiColors(color).text}`}
-    class="name">
+    class="name"
+    style={`color: ${getUiColors(color).text}`} >
     {name}
   </div> 
+  <div class="move_trigger" >
+    <Icon name="layout-grid-small" color={getUiColors(color).text} />
+  </div>
 </div>
 
 <style lang="scss" >
@@ -29,9 +32,11 @@
 
   .CollectionButton {
     align-items: center;
+    border-radius: 5px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
-    cursor: pointer;
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 30px 1fr 1fr;
     transition: all 0.3s;
     padding: 12px 16px;
 
@@ -53,10 +58,20 @@
   .name {
     @include normal-text;
     margin-left: 16px;
+    cursor: default;
+  }
+
+  .move_trigger {
+    justify-self: flex-end;
   }
 </style>
 
 <!--E
-<CollectionButton name='Bandeja' color='#EDE63E' emoji='🛒' />
-<CollectionButton name='Bandeja' color='#4f0b0b' emoji='🛒' />
+<CollectionButton name='Bandeja' color='#8D61EB' emoji='📥' />
+<br>
+<CollectionButton name='Ropa' color='#EDE63E' emoji='👕' />
+<br>
+<CollectionButton name='Libros' color='#1C84FF' emoji='📚' />
+<br>
+<CollectionButton name='Navidad' color='#E45264' emoji='🎄' />
 -->

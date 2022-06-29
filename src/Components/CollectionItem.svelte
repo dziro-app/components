@@ -40,7 +40,7 @@
     <div class="menuWrapper">
       <div class="menu" on:click|preventDefault={() => { showOptions = !showOptions }} >
         <div class="menuTrigger">
-          <Icon size={22} name="dots" />
+          <Icon size={22} name="more-vertical-alt" color="#fff" />
         </div>
         {#if showOptions}
           <div transition:fly="{{y: -10}}" class="options" >
@@ -60,7 +60,7 @@
     <div class="info">
       <div class="name"> { name.length > nameLength ? name.substring(0, nameLength)+" ..." : name } </div>
       <div class="website" >
-        <Icon size={16} name="globe" /> { getDisplayLink(website)}
+        { getDisplayLink(website)}
       </div>
     </div>
     <div class="price">
@@ -107,6 +107,7 @@
       .menuTrigger {
         background: $black;
         border-radius: 3px;
+        cursor: default;
         opacity: 0.8;
         transition: all 0.3s;
         height: 22px;

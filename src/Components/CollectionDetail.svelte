@@ -60,8 +60,8 @@
 </div>
 
 <style lang="scss">
+  @use "../Styles/colors.scss";
   @import "../Styles/_texts.scss";
-  @import "../Styles/_colors.scss";
   @import "../Styles/_sizing.scss";
 
   .header {
@@ -69,10 +69,11 @@
     display: grid;
     grid-template-columns: 36px 1fr 20px;
     padding: 24px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.06);
 
     .iconWrapper {
       align-items: center;
-      background: $white;
+      background: colors.$base-color-white-100;
       border-radius: 50%;
       display: flex;
       font-size: 24px;
@@ -93,9 +94,9 @@
     }
 
     .options {
-      background: $black;
+      background: colors.$base-color-black-100;
       position: absolute;
-      color: $white;
+      color: colors.$base-color-white-100;
       right: 0;
       top: 100%;
       padding: 10px 5px;
@@ -105,8 +106,8 @@
         cursor: pointer;
         padding: 0.5em 5px;
         &:hover {
-          background: $white;
-          color: $black;
+          background: colors.$base-color-white-100;
+          color: colors.$base-color-black-100;
         }
       }
     }
@@ -120,7 +121,7 @@
 
 <!--E
 <CollectionDetail 
-  name='Bandeja' color='#EDE63E' emoji='🛒'
+  name='Ropa' color='#EDE63E' emoji='👕'
   options={[{'display': 'Eliminar', onClick: ()=>{ alert('Eliminar') }}]}>
   Con un solo color calculamos el resto.
 </CollectionDetail>

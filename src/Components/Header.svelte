@@ -44,7 +44,7 @@
 <br>
 <Header 
   username='evesan' 
-  picture='https://scontent.fmex23-1.fna.fbcdn.net/v/t39.30808-1/278564546_10227806627133607_7727109533929761911_n.jpg?stp=dst-jpg_p320x320&_nc_cat=103&ccb=1-5&_nc_sid=7206a8&_nc_ohc=ePMaBe8wRcgAX_JDGQu&_nc_ht=scontent.fmex23-1.fna&oh=00_AT8sxOy6t1oBN8_xBfL-pIKTx6ay3-oG8VLJyKPXtr0HDA&oe=62603FE5'
+  picture='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftresubresdobles.com%2Fwp-content%2Fuploads%2F2021%2F04%2Fskft-23aff38e10ee3c4e430a1f3450c4a01d.jpeg&f=1&nofb=1'
   options={[{'display': 'Acerca de', onClick: ()=>{ alert('acerca de') }}]}
 />
 -->

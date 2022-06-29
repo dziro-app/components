@@ -28,9 +28,10 @@
       class="trigger"
       class:open={isOpen}
       on:click={() => { isOpen = !isOpen }}>
-      <Icon name="CaretDoubleDown" />
+      <Icon size={20} name="chevron-down-o" color="inherit" />
     </div>
   </div>
+
   {#if isOpen && options.length > 0}
     <div class="options">
       { #each options as option }
@@ -41,14 +42,15 @@
 </div>
 
 <style lang="scss" >
-  @import '../Styles/_colors.scss';
+  @use '../Styles/colors.scss';
   @import "../Styles/_sizing.scss";
   @import "../Styles/_texts.scss";
   .Menu {
-    border: 2px solid $white;
-    color: $white;
+    background: colors.$base-color-black-100;
+    border-radius: 10px;
+    color: colors.$base-color-white-100;
     display: inline-block;
-    padding: sizing(1) 5px;
+    padding: sizing(1) sizing(1);
     position: relative;
     .info {
       align-items: center;
@@ -57,6 +59,7 @@
     }
 
     .profilePic {
+      border-radius: 50%;
       object-fit: cover;
       height: 30px;
       width: 30px;
@@ -67,16 +70,19 @@
       font-family: 'Raleway', sans-serif;
     }
     .trigger {
-      cursor: pointer;
       transition: all 0.3s;
-      width: 26px;
+      color: colors.$base-color-gray-60;
+
+      &:hover {
+        color: colors.$base-color-white-100;
+      }
       &.open {
         transform: rotateZ(180deg);
       }
     }
     .options {
       @include small-text;
-      background: $black;
+      background: colors.$base-color-black-100;
       box-sizing: border-box;
       left: 0;
       padding: 10px 5px;    
@@ -87,8 +93,8 @@
       .option {
         padding: 0.5em 5px;
         &:hover {
-          background: $white;
-          color: $black;
+          background: colors.$base-color-white-100;
+          color: colors.$base-color-black-100;
           cursor: pointer;
         }
       }
@@ -98,11 +104,9 @@
 
 
 <!--E
-<div style='background: #000; padding: 1em;' >
-  <UserMenu
-    username='evesan' 
-    picture='https://scontent.fmex23-1.fna.fbcdn.net/v/t39.30808-1/278564546_10227806627133607_7727109533929761911_n.jpg?stp=dst-jpg_p320x320&_nc_cat=103&ccb=1-5&_nc_sid=7206a8&_nc_ohc=ePMaBe8wRcgAX_JDGQu&_nc_ht=scontent.fmex23-1.fna&oh=00_AT8sxOy6t1oBN8_xBfL-pIKTx6ay3-oG8VLJyKPXtr0HDA&oe=62603FE5'
-    options={[{'display': 'Acerca de', onClick: ()=>{ alert('acerca de') }}]}
-  />
-</div>
+<UserMenu
+  username='evesan' 
+  picture='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftresubresdobles.com%2Fwp-content%2Fuploads%2F2021%2F04%2Fskft-23aff38e10ee3c4e430a1f3450c4a01d.jpeg&f=1&nofb=1'
+  options={[{'display': 'Acerca de', onClick: ()=>{ alert('acerca de') }}]}
+/>
 -->

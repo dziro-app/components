@@ -1,21 +1,18 @@
 <!--D Menu del header para usuario pro -->
 <script lang='ts' >
   import Icon from "./Icon.svelte"
+  import Menu from "./Menu.svelte"
+  import type {Option} from "./Menu.svelte"
 
-  type Option = {
-    display: string,
-    onClick: Function
-  }
-
-  export let  username: string // Nombre del usuario
+  export let username: string // Nombre del usuario
   export let picture: string // Url del perfil del usuario
   export let options: Array<Option> = [] // array de opciones para el menú
 
+
   let isOpen = false
 
-  const onDefaultOptionClick = (option: Option) => {
+  const onDefaultOptionClick = () => {
     isOpen=false
-    option.onClick()
   }
 
 </script>
@@ -34,9 +31,7 @@
 
   {#if isOpen && options.length > 0}
     <div class="options">
-      { #each options as option }
-        <div class="option" on:click={() => onDefaultOptionClick(option)} > {option.display} </div>
-      {/each}
+      <Menu options={options} onClick={onDefaultOptionClick} />
     </div>
   {/if}
 </div>
@@ -82,22 +77,12 @@
     }
     .options {
       @include small-text;
-      background: colors.$base-color-black-100;
       box-sizing: border-box;
-      left: 0;
-      padding: 10px 5px;    
+      left: 0;  
       position: absolute;
-      top: 105%;
+      top: 100%;
       width: 100%;
       z-index: 3;
-      .option {
-        padding: 0.5em 5px;
-        &:hover {
-          background: colors.$base-color-white-100;
-          color: colors.$base-color-black-100;
-          cursor: pointer;
-        }
-      }
     }
   }
 </style>
@@ -107,6 +92,6 @@
 <UserMenu
   username='evesan' 
   picture='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftresubresdobles.com%2Fwp-content%2Fuploads%2F2021%2F04%2Fskft-23aff38e10ee3c4e430a1f3450c4a01d.jpeg&f=1&nofb=1'
-  options={[{'display': 'Acerca de', onClick: ()=>{ alert('acerca de') }}]}
+  options={[{'text': 'Acerca de', onClick: ()=>{ alert('acerca de') }}]}
 />
 -->

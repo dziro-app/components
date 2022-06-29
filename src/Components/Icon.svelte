@@ -1,9 +1,13 @@
 <!--D Componente de icono -->
-<script lang="ts">
-  export let name: 
-  "add" | "ShoppingBag" | "chevron-down-o" | "chevron-right-r" | 
+
+<script lang="ts" context="module" >
+  export type IconType = "add" | "ShoppingBag" | "chevron-down-o" | "chevron-right-r" | 
   "controller" | "layout-grid-small" | "more-vertical-alt"|
-  "more-vertical-r" | "rename" | "ShoppingBag" | "trash-empty" = "more-vertical-r"
+  "more-vertical-r" | "rename" | "ShoppingBag" | "trash-empty"
+
+</script>
+<script lang="ts">
+  export let name: IconType = "more-vertical-r"
   export let size = 32
   export let color = "#000000"
 </script>

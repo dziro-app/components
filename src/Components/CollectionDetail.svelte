@@ -1,14 +1,12 @@
 <!--D Componente para preview de una colección -->
-
 <script lang="ts">
   import { fly } from 'svelte/transition'
   import Icon from "./Icon.svelte"
   import {getUiColors} from "../Utils/colors"
 
-  type Option = {
-    display: string,
-    onClick: Function
-  }
+  import Menu from "./Menu.svelte"
+  import type {Option} from "./Menu.svelte"
+
 
   export let name: string // Nombre de la colección
   export let color: string // Color de la colección
@@ -18,9 +16,8 @@
   let showOptions = false
   let colors = getUiColors(color)
 
-  const onDefaultOptionClick = (option: Option) => {
+  const onDefaultOptionClick = () => {
     showOptions=false
-    option.onClick()
   }
 
   $: {
@@ -45,10 +42,8 @@
       on:click={() => { showOptions = !showOptions }}
       color={colors.text} />
       {#if showOptions}
-        <div class="options" transition:fly="{{ y: -10 }}">
-          { #each options as option }
-            <div class="option" on:click={() => onDefaultOptionClick(option)} > {option.display} </div>
-          {/each}
+        <div class="options">
+          <Menu options={options} onClick={onDefaultOptionClick} />
         </div>
       {/if}
     </div>
@@ -89,27 +84,13 @@
     }
 
     .menu {
-      cursor: pointer;
       position: relative;
     }
 
     .options {
-      background: colors.$base-color-black-100;
       position: absolute;
-      color: colors.$base-color-white-100;
       right: 0;
       top: 100%;
-      padding: 10px 5px;
-
-      .option {
-        @include mini-text;
-        cursor: pointer;
-        padding: 0.5em 5px;
-        &:hover {
-          background: colors.$base-color-white-100;
-          color: colors.$base-color-black-100;
-        }
-      }
     }
     
   }
@@ -122,7 +103,7 @@
 <!--E
 <CollectionDetail 
   name='Ropa' color='#EDE63E' emoji='👕'
-  options={[{'display': 'Eliminar', onClick: ()=>{ alert('Eliminar') }}]}>
+  options={[{'id': 0, 'text': 'Editar', 'icon': 'rename', 'onClick': () => { console.log('Editar') }}, {'id': 1, 'text': 'Eliminar', 'icon': 'trash-empty', 'onClick': () => { console.log('Eliminar') }}]} >
   Con un solo color calculamos el resto.
 </CollectionDetail>
 -->

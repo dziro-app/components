@@ -5,6 +5,7 @@
   import Logo from "./Docs/Pages/Logo.svelte"
   import Icon from "./Docs/Pages/Icon.svelte"
   import Button from "./Docs/Pages/Button.svelte"
+  import Menu from "./Docs/Pages/Menu.svelte"
   import UserMenu from "./Docs/Pages/UserMenu.svelte"
   import Header from "./Docs/Pages/Header.svelte" 
 
@@ -22,7 +23,7 @@
   // Misc
   import ModalBase from "./Docs/Pages/ModalBase.svelte"
   
-  let CurrentComponent = InputEmoji
+  let CurrentComponent = UserMenu
   
   const componentMap = [{
     name: "Logo",
@@ -33,6 +34,9 @@
   }, {
     name: "Button",
     component: Button
+  }, {
+    name: "Menu",
+    component: Menu
   }, {
     name: "UserMenu",
     component: UserMenu

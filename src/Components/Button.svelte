@@ -4,13 +4,15 @@
 
   export let form: "outline" | "normal"  = "normal" // Estilo del botón
   export let type: "button" | "submit" = "button" // Tipo de botón
-  export let loading: boolean = false // Bandera q  ue indica el loading
+  export let loading: boolean = false // Bandera que indica el loading
+  export let color: string = "#464646" // Color del botón
 </script>
 
 <button 
   class:outline={form==="outline"}
   class:normal={form==="normal"}
   class:loading={loading}
+  style={`background: ${color}`}
   type={type}
   on:click>
   {#if loading}
@@ -31,20 +33,20 @@
     background: none;
     border-radius: 5px;
     border: none;
-    cursor: pointer;
 
     &.normal {
       background: colors.$base-color-black-80;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.06);
       color: colors.$base-color-white-100;;
-      padding: sizing(2) sizing(8);
+      padding: sizing(2) sizing(2);
+      min-width: 220px;
       transition: all 0.3s;
       &:hover {
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
       }
       &.loading{
         background-color: colors.$base-color-gray-60;
-        padding: sizing(2) sizing(8);
+        padding: sizing(2) sizing(2);
       }
     }
 
